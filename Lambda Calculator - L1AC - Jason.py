@@ -1,23 +1,5 @@
-'''
-x = lambda  a : a + 10
-print(x(5))
-
-arr = [1, 2, 3, 4, 5]
-x = lambda b : b [-1]
-print(x(arr))
-
-def myfunc(n):
-    return lambda a : a * n
-mydoubler = myfunc(2)
-
-print(mydoubler(120))
-
-
-x = lambda a, b, c : a + b + c
-print(x(5, 6, 2))
-
 print("Lambda Calculator")
-'''
+
 add = lambda a, b : a + b                                                                                               # this is the variable add for the lambda of addition
 
 subtract = lambda a, b : a - b                                                                                          # this is the variable subtract for the lambda of subtraction
@@ -25,16 +7,34 @@ subtract = lambda a, b : a - b                                                  
 multiply = lambda a, b : a * b                                                                                          # this is the variable multiply for the lambda of multiply
 
 divide = lambda a, b : a / b                                                                                            # this is the variable divide for the lambda of divide
+                                                               
+def maincalculator():                                                                                                   # Main function for the calculator
+    calc = True                                                                                                         # calc = True
+    num1 = int(input("Enter number 1: "))                                                                               # variable num 1 for inputing number 1
+    while calc == True:                                                                                                 # while looping for the condition calc = True
 
-userinput = input("Enter any numbers: ")                                                                                # variable user input for inputing the numbers
-us = userinput.split()                                                                                                  # the variable us for splitting the user input to strings
-list = list(us)                                                                                                         # variable of list for listing the us so we can use indexing
+        num2 = int(input("Enter number 2: "))                                                                           # input number 2
+        op = input("Input the operator, or 'e' if you want to quit: ")                                                  # input the operator
 
-if list[1] == "+":                                                                                                      # if conditional if index 1 in the list is +
-    print(add(int(list[0]), int(list[2])))                                                                              # print function add for the integers in index 0 and 2 (int is to make sure it is integer)
-elif list[1] == "-":                                                                                                    # else if conditional if index 1 in the list is -
-    print(subtract(int(list[0]), int(list[2])))                                                                         # print function subtract for the integers in index 0 and 2
-elif list[1] == "*":                                                                                                    # else if conditional if index 1 in the list is *
-    print(multiply(int(list[0]), int(list[2])))                                                                         # print function multiply for the integers in index 0 and 2
-elif list[1] == "/":                                                                                                    # else if conditional if index 1 in the list is /
-    print(divide(int(list[0]), int(list[2])))                                                                           # print fucntion divide for the integers in index 0 and 2
+        if op == "+":                                                                                                   # if condition the operator is + then result will be num 1 + num 2
+            result = add(num1, num2)
+            print(result)
+        elif op == "-":                                                                                                 # if condition the operator is - then result will be num 1 - num 2
+            result = subtract(num1, num2)
+            print(result)
+        elif op == "*":                                                                                                 # if condition the operator is * then result will be num 1 * num 2
+            result = multiply(num1, num2)
+            print(result)
+        elif op == "/":                                                                                                 # if condition the operator is * then result will be num 1 / num 2
+            result = divide(num1, num2)
+            print(result)
+        elif op == "e":                                                                                                 # if condition the operator is e then the program will quit
+            run = False
+            print("You have quit this program", result)
+            break                                                                                                       # it will break the whole loop
+
+    r = result
+
+maincalculator()
+
+# Reference from Ryan Rusli
