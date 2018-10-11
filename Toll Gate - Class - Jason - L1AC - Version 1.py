@@ -51,13 +51,13 @@ def toll_operator():                                    # Function for toll oper
                 print("<Exit Program>")                 # print exit program
                 break                                   # break the loop
         if Userinput == "bus":                          # if choice is "bus"
-            print("Fee: Rp.{)".format(TG.bus_fee()))    # print the caption and the fee from class
+            print("Fee: Rp.{}".format(TG.bus_fee()))    # print the caption and the fee from class
             Again = input("Is there any other vehicle (Y/N)? ").upper() # Again is the variable for inputing Y or N
             if Again == "N":                            # if condition for the input is N
                 print("<Exit Program>")                 # print exit program
                 break                                   # break the loop
         if Userinput == "truck":                        # if choice is truck
-            print("Fee: Rp. {)".format(TG.truck_fee())) # print the caption and the fee from class
+            print("Fee: Rp. {}".format(TG.truck_fee())) # print the caption and the fee from class
             Again = input("Is there any other vehicle (Y/N)? ").upper() # Again is the variable for inputing Y or N
             if Again == "N":                            # if condition for the input is N
                 print("<Exit Program>")                 # print caption
