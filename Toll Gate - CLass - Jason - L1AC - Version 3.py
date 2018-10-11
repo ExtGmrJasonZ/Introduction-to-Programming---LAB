@@ -28,7 +28,7 @@ class Tollgate(Car, Bus, Truck):                        #Class Tollgate inheriti
         Truck.getTruck = 10000                          # truck fee is 10000
         return Truck.getTruck                           # return truck fee
 
-class Tollgate2(Car, Bus, Truck):
+class Tollgate2(Car, Bus, Truck):                       # Class for tollgate 2
     def __init__(self, type):
         super().__init__(type)
     def car_fee(self):
@@ -49,7 +49,7 @@ def toll_operator():                                    # function for toll oper
     listofBus = 0                                       # list for number of bus
     listofTrucks = 0                                    # list for number of trucks
 
-    NumofCars = 0
+    NumofCars = 0                                       # List for the other tollgate
     NumofBus = 0
     NumofTruck = 0
 
@@ -59,8 +59,8 @@ def toll_operator():                                    # function for toll oper
         print(" "*2, "Pt Jasa Marga, Tbk")              # print caption
         print("="*25)                                   # print caption
 
-        print("1. Meruya Toll Gate \n2. Pondok Aren Toll Gate")
-        usrinput = input("Location:")
+        print("1. Meruya Toll Gate \n2. Pondok Aren Toll Gate")     # print caption
+        usrinput = input("Location:")                               # variable for inputing location
         if usrinput == "1":
             print("Category of vehicle: ")                  # print caption
             print("1. Car (Rp 6000)\n2. Bus (Rp 8000)\n3. Truck (Rp 10000)")# print caption
@@ -74,17 +74,21 @@ def toll_operator():                                    # function for toll oper
                 Again = input("Is there any other vehicle (Y/N)? ").upper() # Again variable for inputing Y or N
                 if Again == "N":                                            # If condition the coice is N
                     print("Location: Meruya")
+                    print("="*25)
                     print("Car  Bus  Truck")                                # print caption
+                    print("="*25)
                     print("{}   {}   {}.".format(listofCars, listofBus, listofTrucks))      # print the number of all vehicles
                     print("Location: Pondok Aren")
+                    print("="*25)
                     print("Car  Bus  Truck")
+                    print("="*25)
                     print("{}   {}   {}.".format(NumofCars, NumofBus, NumofTruck))
-                    revenue = (TG.car_fee() * listofCars + TG.bus_fee() * listofBus + TG.truck_fee() * listofTrucks)    # variable for calculating the revenue
-                    revenue2 = (TG2.car_fee() * NumofCars + TG2.bus_fee() * NumofBus + TG2.truck_fee() * NumofTruck)
-                    gtotalrevenue = revenue + revenue2
+                    revenue = (TG.car_fee() * listofCars + TG.bus_fee() * listofBus + TG.truck_fee() * listofTrucks)    # variable for calculating the revenue for the meruya tollgate
+                    revenue2 = (TG2.car_fee() * NumofCars + TG2.bus_fee() * NumofBus + TG2.truck_fee() * NumofTruck)    # variable for calculating the revenue for the pondok aren tollgate
+                    gtotalrevenue = revenue + revenue2                                                                  # for counting the grand total revenue
                     print("The revenue of Meruya Tollgate is {}".format(revenue))              # print the revenue
-                    print("The revenue of Pondok Aren Tollgate is {}".format(revenue2))
-                    print("The grand total revenue is {}".format(gtotalrevenue))
+                    print("The revenue of Pondok Aren Tollgate is {}".format(revenue2))        # print the revenue
+                    print("The grand total revenue is {}".format(gtotalrevenue))               # print the grand total revenue
                     print("<Exit Program>")                                 # print the caption
                     break                                                   # break the loop
 
@@ -95,10 +99,14 @@ def toll_operator():                                    # function for toll oper
                 Again = input("Is there any other vehicle (Y/N)? ").upper() # Variable for inputing the Y or N
                 if Again == "N":                                            # if the input is N
                     print("Location: Meruya")
+                    print("="*25)
                     print("Car  Bus  Truck")                                # print caption
+                    print("="*25)
                     print("{}   {}   {}.".format(listofCars, listofBus, listofTrucks))      # print the number of all vehicles
                     print("Location: Pondok Aren")
+                    print("="*25)
                     print("Car  Bus  Truck")
+                    print("="*25)
                     print("{}   {}   {}.".format(NumofCars, NumofBus, NumofTruck))
                     revenue = (TG.car_fee() * listofCars + TG.bus_fee() * listofBus + TG.truck_fee() * listofTrucks)    # variable for calculating the revenue
                     revenue2 = (TG2.car_fee() * NumofCars + TG2.bus_fee() * NumofBus + TG2.truck_fee() * NumofTruck)
@@ -116,10 +124,14 @@ def toll_operator():                                    # function for toll oper
                 Again = input("Is there any other vehicle (Y/N)? ").upper() # Variable for inputing Y or N
                 if Again == "N":                                            # if input is N
                     print("Location: Meruya")
+                    print("="*25)
                     print("Car  Bus  Truck")                                # print caption
+                    print("="*25)
                     print("{}   {}   {}.".format(listofCars, listofBus, listofTrucks))      # print the number of all vehicles
                     print("Location: Pondok Aren")
+                    print("="*25)
                     print("Car  Bus  Truck")
+                    print("="*25)
                     print("{}   {}   {}.".format(NumofCars, NumofBus, NumofTruck))
                     revenue = (TG.car_fee() * listofCars + TG.bus_fee() * listofBus + TG.truck_fee() * listofTrucks)    # variable for calculating the revenue
                     revenue2 = (TG2.car_fee() * NumofCars + TG2.bus_fee() * NumofBus + TG2.truck_fee() * NumofTruck)
@@ -128,7 +140,7 @@ def toll_operator():                                    # function for toll oper
                     print("The revenue of Pondok Aren Tollgate is {}".format(revenue2))
                     print("The grand total revenue is {}".format(gtotalrevenue))
                     print("<Exit Program>")                                 # print the caption
-                break                                                   # break the loop
+                    break                                                   # break the loop
         if usrinput == "2":
             print("Category of vehicle: ")                  # print caption
             print("1. Car (Rp 18000)\n2. Bus (Rp 20000)\n3. Truck (Rp 25000)")
@@ -142,10 +154,15 @@ def toll_operator():                                    # function for toll oper
                 Again = input("Is there any other vehicle (Y/N)? ").upper() # Again variable for inputing Y or N
                 if Again == "N":                                            # If condition the coice is N
                     print("Location: Meruya")
+                    print("Location: Meruya")
+                    print("="*25)
                     print("Car  Bus  Truck")                                # print caption
+                    print("="*25)
                     print("{}   {}   {}.".format(listofCars, listofBus, listofTrucks))      # print the number of all vehicles
                     print("Location: Pondok Aren")
+                    print("="*25)
                     print("Car  Bus  Truck")
+                    print("="*25)
                     print("{}   {}   {}.".format(NumofCars, NumofBus, NumofTruck))
                     revenue = (TG.car_fee() * listofCars + TG.bus_fee() * listofBus + TG.truck_fee() * listofTrucks)    # variable for calculating the revenue
                     revenue2 = (TG2.car_fee() * NumofCars + TG2.bus_fee() * NumofBus + TG2.truck_fee() * NumofTruck)
@@ -153,7 +170,7 @@ def toll_operator():                                    # function for toll oper
                     print("The revenue of Meruya Tollgate is {}".format(revenue))              # print the revenue
                     print("The revenue of Pondok Aren Tollgate is {}".format(revenue2))
                     print("The grand total revenue is {}".format(gtotalrevenue))
-                    print("<Exit Program>")                                 # print the caption                      # print the caption
+                    print("<Exit Program>")                                 # print the caption
                     break                                                   # break the loop
 
             if Userinput == "bus":                                          # if input is the bus
@@ -163,10 +180,14 @@ def toll_operator():                                    # function for toll oper
                 Again = input("Is there any other vehicle (Y/N)? ").upper() # Variable for inputing the Y or N
                 if Again == "N":                                            # if the input is N
                     print("Location: Meruya")
+                    print("="*25)
                     print("Car  Bus  Truck")                                # print caption
+                    print("="*25)
                     print("{}   {}   {}.".format(listofCars, listofBus, listofTrucks))      # print the number of all vehicles
                     print("Location: Pondok Aren")
+                    print("="*25)
                     print("Car  Bus  Truck")
+                    print("="*25)
                     print("{}   {}   {}.".format(NumofCars, NumofBus, NumofTruck))
                     revenue = (TG.car_fee() * listofCars + TG.bus_fee() * listofBus + TG.truck_fee() * listofTrucks)    # variable for calculating the revenue
                     revenue2 = (TG2.car_fee() * NumofCars + TG2.bus_fee() * NumofBus + TG2.truck_fee() * NumofTruck)
@@ -184,10 +205,14 @@ def toll_operator():                                    # function for toll oper
                 Again = input("Is there any other vehicle (Y/N)? ").upper() # Variable for inputing Y or N
                 if Again == "N":                                            # if input is N
                     print("Location: Meruya")
+                    print("="*25)
                     print("Car  Bus  Truck")                                # print caption
+                    print("="*25)
                     print("{}   {}   {}.".format(listofCars, listofBus, listofTrucks))      # print the number of all vehicles
                     print("Location: Pondok Aren")
+                    print("="*25)
                     print("Car  Bus  Truck")
+                    print("="*25)
                     print("{}   {}   {}.".format(NumofCars, NumofBus, NumofTruck))
                     revenue = (TG.car_fee() * listofCars + TG.bus_fee() * listofBus + TG.truck_fee() * listofTrucks)    # variable for calculating the revenue
                     revenue2 = (TG2.car_fee() * NumofCars + TG2.bus_fee() * NumofBus + TG2.truck_fee() * NumofTruck)
@@ -196,6 +221,6 @@ def toll_operator():                                    # function for toll oper
                     print("The revenue of Pondok Aren Tollgate is {}".format(revenue2))
                     print("The grand total revenue is {}".format(gtotalrevenue))
                     print("<Exit Program>")                                 # print the caption
-                break                                                   # break the loop
+                    break                                                   # break the loop
 
 toll_operator()                                                         # Run the function
