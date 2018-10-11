@@ -61,7 +61,7 @@ def toll_operator():                                    # function for toll oper
                 break                                                   # break the loop
         if Userinput == "bus":                                          # if input is the bus
             listofBus += 1                                              # the value of number of buses is added by 1
-            print("Fee: Rp.{)".format(TG.bus_fee()))                    # print the caption and the fee of the bus
+            print("Fee: Rp.{}".format(TG.bus_fee()))                    # print the caption and the fee of the bus
             print(listofBus, "Buses")                                   # print the list of the buses
             Again = input("Is there any other vehicle (Y/N)? ").upper() # Variable for inputing the Y or N
             if Again == "N":                                            # if the input is N
@@ -73,7 +73,7 @@ def toll_operator():                                    # function for toll oper
                 break                                                   # break the loop
         if Userinput == "truck":                                        # If the input is truck
             listofTrucks += 1                                           # the number of the buses is added by 1
-            print("Fee: Rp. {)".format(TG.truck_fee()))                 # print the caption and the fee of the bus
+            print("Fee: Rp. {}".format(TG.truck_fee()))                 # print the caption and the fee of the bus
             print(listofTrucks, "Trucks")                               # print the list of trucks
             Again = input("Is there any other vehicle (Y/N)? ").upper() # Variable for inputing Y or N
             if Again == "N":                                            # if input is N
