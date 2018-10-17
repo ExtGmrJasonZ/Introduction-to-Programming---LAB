@@ -64,9 +64,9 @@ def toll_operator():                                    # function for toll oper
         if usrinput == "1":
             print("Category of vehicle: ")                  # print caption
             print("1. Car (Rp 6000)\n2. Bus (Rp 8000)\n3. Truck (Rp 10000)")# print caption
-            Userinput = input("Category of vehicle: ").lower()              # Userinput variable for inputing your choices
+            Userinput = input("Category of vehicle - (Input car/bus/truck): ").lower()              # Userinput variable for inputing your choices
             TG = Tollgate(Userinput)                                        # TG Object from Tollgate
-
+            TG2 = Tollgate2(Userinput)
             if Userinput == "car":                                          # if condition for your choice for car
                 listofCars += 1                                             # List for number of cars is added by 1 for the value
                 print("Fee: Rp.{}".format(TG.car_fee()))                    # print caption and the fee of the car
@@ -144,13 +144,13 @@ def toll_operator():                                    # function for toll oper
         if usrinput == "2":
             print("Category of vehicle: ")                  # print caption
             print("1. Car (Rp 18000)\n2. Bus (Rp 20000)\n3. Truck (Rp 25000)")
-            Userinput = input("Category of vehicle: ").lower()              # Userinput variable for inputing your choices
-            TG2 = Tollgate2(Userinput)
+            Userinput = input("Category of vehicle - (Input car/bus/truck): ").lower()              # Userinput variable for inputing your choices
+
 
             if Userinput == "car":                                          # if condition for your choice for car
                 NumofCars += 1                                             # List for number of cars is added by 1 for the value
                 print("Fee: Rp.{}".format(TG2.car_fee()))                    # print caption and the fee of the car
-                print(listofCars, "Cars")                                   # print the number of cars
+                print(NumofCars, "Cars")                                   # print the number of cars
                 Again = input("Is there any other vehicle (Y/N)? ").upper() # Again variable for inputing Y or N
                 if Again == "N":                                            # If condition the coice is N
                     print("Location: Meruya")
@@ -176,7 +176,7 @@ def toll_operator():                                    # function for toll oper
             if Userinput == "bus":                                          # if input is the bus
                 NumofBus += 1                                              # the value of number of buses is added by 1
                 print("Fee: Rp.{}".format(TG2.bus_fee()))                    # print the caption and the fee of the bus
-                print(listofBus, "Buses")                                   # print the list of the buses
+                print(NumofBus, "Buses")                                   # print the list of the buses
                 Again = input("Is there any other vehicle (Y/N)? ").upper() # Variable for inputing the Y or N
                 if Again == "N":                                            # if the input is N
                     print("Location: Meruya")
@@ -201,7 +201,7 @@ def toll_operator():                                    # function for toll oper
             if Userinput == "truck":                                        # If the input is truck
                 NumofTruck += 1                                           # the number of the buses is added by 1
                 print("Fee: Rp. {}".format(TG2.truck_fee()))                 # print the caption and the fee of the bus
-                print(listofTrucks, "Trucks")                               # print the list of trucks
+                print(NumofTruck, "Trucks")                               # print the list of trucks
                 Again = input("Is there any other vehicle (Y/N)? ").upper() # Variable for inputing Y or N
                 if Again == "N":                                            # if input is N
                     print("Location: Meruya")
