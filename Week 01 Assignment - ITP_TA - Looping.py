@@ -10,7 +10,7 @@ LeftUpperTriangle(5)                                      # I want to print 5 ro
 def RightUpperTriangle(num):                              # Module for printing the Upper Right Triangle shaped asterisks
     x = 1                                                 # x starts from 1
     while x <= num:                                       # this is the while loop in which the condition is x is less than or equal to the value of num
-        print(" "*(num-x), "*"*x)                         # print the spaces decreasing the line and print the asterisks multiply by the value of x
+        print(" "*(num-x) + "*"*x)                         # print the spaces decreasing the line and print the asterisks multiply by the value of x
         x += 1                                            # Ready to continue new line
 
 RightUpperTriangle(5)                                     # I want to print 5 rows of the module
@@ -27,7 +27,7 @@ LeftTriangel(5)                                           # I want to print 5 ro
 def RightTriangle(num):                                     # Module for printing the right side right angled triangle shaped asterisks
     x = 0                                                   # x starts from 0
     while x <= num:                                         # this is the while loop in which the condition is x is less than or equal to the value of num
-        print(" "*(num+x), "*"*(num - x))                   # print the spaces to increase down the line and print the asterisks also decrease down the line
+        print(" "*x + "*"*(num - x))                   # print the spaces to increase down the line and print the asterisks also decrease down the line
         x += 1                                              # ready to continue to new line
 
 RightTriangle(5)                                            # this means that I want to print 5 rows of the module
